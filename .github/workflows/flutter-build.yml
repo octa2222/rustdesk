@@ -364,6 +364,7 @@ jobs:
           mkdir -p ./SignOutput
           mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.exe
       - name: Upload Custom Windows EXE
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: RustDesk-Windows-Custom-${{ matrix.job.arch }}
